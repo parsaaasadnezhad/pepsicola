@@ -6,6 +6,9 @@
         <file>Element/Property.qml</file>
         <file>Advertisment/FanSeat.qml</file>
         <file>Advertisment/EnviromentalBilboard.qml</file>
+        <file>AwesomeQml/RectangleItem.qml</file>
+        <file>AwesomeQml/PieItem.qml</file>
+        <file>AwesomeQml/ArcItem.qml</file>
     </qresource>
     <qresource prefix="/Icon">
         <file>Icon/hide.svg</file>

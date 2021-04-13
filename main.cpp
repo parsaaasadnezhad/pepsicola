@@ -1,11 +1,14 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "AdvertismentCpp/fanseat.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
+
+    qmlRegisterType<FanSeat>("AdvertismentCpp" , 1 , 0 , "FanSeatCpp");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

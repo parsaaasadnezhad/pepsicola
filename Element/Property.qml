@@ -10,7 +10,7 @@ Item {
         width: parent.width - leftBar_Id.width
         height: parent.height - topBar_Id.height
 
-        Component.onCompleted: {propertyItemLoader_Id.sourceComponent = fanSeatComponent_Id}
+        Component.onCompleted: {propertyItemLoader_Id.sourceComponent = enviromentalBilboardComponent_Id}
 
         Loader{
             id:propertyItemLoader_Id
