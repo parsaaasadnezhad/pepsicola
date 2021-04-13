@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Element/TopList.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Element/Property.qml</file>
+        <file>Advertisment/FanSeat.qml</file>
+        <file>Advertisment/EnviromentalBilboard.qml</file>
+    </qresource>
+    <qresource prefix="/Icon">
+        <file>Icon/hide.svg</file>
+        <file>Icon/eye.svg</file>
+    </qresource>
+</RCC>
