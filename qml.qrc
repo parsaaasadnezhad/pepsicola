@@ -13,5 +13,6 @@
     <qresource prefix="/Icon">
         <file>Icon/hide.svg</file>
         <file>Icon/eye.svg</file>
+        <file>Icon/arrow.svg</file>
     </qresource>
 </RCC>

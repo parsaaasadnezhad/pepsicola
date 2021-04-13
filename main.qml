@@ -5,7 +5,7 @@ import "Element"
 
 ApplicationWindow {
     width: 450
-    height: 800
+    height: 700
     visible: true
     title: "spring"
 
