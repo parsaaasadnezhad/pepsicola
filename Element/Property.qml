@@ -3,6 +3,8 @@ import "../Advertisment"
 
 Item {
 
+    property alias fanseatAlias: propertyItemLoader_Id
+
     Item{
         id:mainItem_Id
         anchors.left: leftBar_Id.right
@@ -37,6 +39,11 @@ Item {
     // + + + + + Declaring Advertisment Qml Files
     Component{
         id:fanSeatComponent_Id
+
+//        function connectToFanSeat(name){
+//            console.log("hello")
+//            fanSeat_Id.modeRectangleItemName = name
+//        }
 
         FanSeat{
             id:fanSeat_Id

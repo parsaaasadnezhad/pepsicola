@@ -4,6 +4,8 @@ import QtQuick.Controls 2.12
 Item {
     clip: true
 
+    signal sendNameToAd(string name)
+
     ListView{
         id:listView_Id
         anchors.fill: parent
@@ -11,7 +13,7 @@ Item {
             color: "#0d47a1"; radius: 5 ;z:1;opacity: 0.3
         }
         focus: true
-        model: 10
+        model: 4
 
         delegate: Rectangle{
             width: parent.width
@@ -36,7 +38,7 @@ Item {
                     cursorShape: "PointingHandCursor"
                     onClicked: {
                         rightImage_Id.hidden = !rightImage_Id.hidden
-                        listView_Id.currentIndex = index
+                        listView_Id.currentIndex = index 
                     }
                 }
 
@@ -47,6 +49,7 @@ Item {
                 height: parent.height
                 onClicked: {
                     listView_Id.currentIndex = index
+                    sendNameToAd(modelData)
                 }
             }
         }

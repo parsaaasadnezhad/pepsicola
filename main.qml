@@ -21,6 +21,11 @@ ApplicationWindow {
         id:topList_Id
         width: parent.width
         height: 200
+
+        onSendNameToAd: {
+            console.log(name)
+//            property_Id.fanseatAlias.fanSeat_Id.modeRectangleItemName = name
+        }
     }
 
     Property{
