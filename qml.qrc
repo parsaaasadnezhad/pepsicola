@@ -9,6 +9,8 @@
         <file>AwesomeQml/RectangleItem.qml</file>
         <file>AwesomeQml/PieItem.qml</file>
         <file>AwesomeQml/ArcItem.qml</file>
+        <file>CustomItem/MyCheckBox.qml</file>
+        <file>CustomItem/MyRectangleSlider.qml</file>
     </qresource>
     <qresource prefix="/Icon">
         <file>Icon/hide.svg</file>
