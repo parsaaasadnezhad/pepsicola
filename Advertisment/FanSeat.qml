@@ -13,8 +13,6 @@ Rectangle {
     anchors.fill: parent
     color: "#454545"
 
-    signal changeItem()
-
     FanSeatCpp{
 
     }
@@ -23,7 +21,7 @@ Rectangle {
         anchors.centerIn: parent
         width:   parent.width - 20
         height: parent.height - 20
-        contentHeight: height + height/5
+        contentHeight: height + height/4
         clip: true
         z:2
 
@@ -35,34 +33,17 @@ Rectangle {
             Row{
                 Label{text: "Fanseat"}
             }
-            //01
-
-            RectangleItem{
-                id:rectangleItem_Id
-                radius: 0;width: parent.width;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
-                fillColor: "#232323"
-                topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
-
-                Row{
-                    anchors.fill: parent
-                    spacing: 10
-                    RectangleItem{
-                        id:modeRectItem_Id
-                        radius: 0;width: 40;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
-                        fillColor: "#353535"
-                        topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
-                        Label{anchors.centerIn: parent ; text: "Mode" ; font.pointSize: 8}
-                    }
-                    Text{
-                        anchors.verticalCenter: parent.verticalCenter
-                        width: parent.width - modeRectItem_Id.width
-                        text: "name"
-                    }
-                }
-            }
-
 
             //1
+            MyRectangleSize{
+                id:modeRectItem_Id
+                titleText: "Mode"
+                valueText: "parsa"
+                titleFontSize: 8
+                opacity: 1
+            }
+
+            //2
             Rectangle{
                 id:sizeRectangle_Id
                 property bool isExpanded: false
@@ -88,11 +69,12 @@ Rectangle {
                     }
                     Behavior on rotation {NumberAnimation{duration:500}}
                 }
+
                 Text{
                     y:5
                     anchors.left: sizeRectImage_Id.right
                     anchors.leftMargin: 5
-                    text: "size"
+                    text: "Size"
                 }
 
                 Item{
@@ -107,79 +89,27 @@ Rectangle {
                     Column{
                         anchors.fill: parent
                         opacity: sizeRectangle_Id.isExpanded ? 1 : 0
+
                         //bad code has beed started. i should put this lines to another qml file
-                        RectangleItem{
-                            id:rectangleItem3_Id
-                            radius: 0;width: parent.width;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
-                            fillColor: "#232323"
-                            topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
-                            opacity: 0.8
-                            Row{
-                                anchors.fill: parent
-                                spacing: 10
-                                RectangleItem{
-                                    id:modeRectItem3_Id
-                                    radius: 0;width: 50;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
-                                    fillColor: "#353535"
-                                    topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
-                                    Label{anchors.centerIn: parent ; text: "Height" ; font.pointSize: 7}
-                                }
-                                Text{
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    width: parent.width - modeRectItem_Id.width
-                                    text: "3.00m"
-                                }
-                            }
+                        //1
+                        MyRectangleSize{
+                            titleText: "Height"
+                            valueText: "3.00"
+                            titleWidth: 50
                         }
-                        //bad code has been finished. i should put this lines to another qml file
-                        RectangleItem{
-                            id:rectangleItem4_Id
-                            radius: 0;width: parent.width;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
-                            fillColor: "#232323"
-                            topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
-                            opacity: 0.8
-
-                            Row{
-                                anchors.fill: parent
-                                spacing: 10
-                                RectangleItem{
-                                    id:modeRectItem4_Id
-                                    radius: 0;width: 50;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
-                                    fillColor: "#353535"
-                                    topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
-                                    Label{anchors.centerIn: parent ; text: "Width" ; font.pointSize: 7}
-                                }
-                                Text{
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    width: parent.width - modeRectItem_Id.width
-                                    text: "name"
-                                }
-                            }
+                        //2
+                        MyRectangleSize{
+                            titleText: "Width"
+                            valueText: "45"
+                            titleWidth: 50
                         }
-                        //bad code has been finished. i should put this lines to another qml file
-                        RectangleItem{
-                            radius: 0;width: parent.width;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
-                            fillColor: "#232323"
-                            topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
-                            opacity: 0.8
-
-                            Row{
-                                anchors.fill: parent
-                                spacing: 10
-                                RectangleItem{
-                                    radius: 0;width: 50;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
-                                    fillColor: "#353535"
-                                    topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
-                                    Label{anchors.centerIn: parent ; text: "Rotation" ; font.pointSize: 7}
-                                }
-                                Text{
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    width: parent.width - modeRectItem_Id.width
-                                    text: "name"
-                                }
-                            }
+                        //3
+                        MyRectangleSize{
+                            titleText: "Rotation"
+                            valueText: "60"
+                            titleWidth: 50
                         }
-
+                        //4
                         //bad code has been finished. i should put this lines to another qml file
                         Row{
                             width: parent.width
@@ -198,7 +128,8 @@ Rectangle {
                                 fillColor: "#232323"
                                 topLeftRadius: 5;bottomRightRadius: 5;topLeftBevel: true;bottomRightBevel: true
                                 opacity: 0.8
-                                Label{anchors.centerIn: parent ; text: "3" ; font.pointSize: 7}
+                                Label{anchors.centerIn: parent ; text: "3" ; font.pointSize: 7
+                                }
                             }
                             RectangleItem{
                                 radius: 0;width: parent.width/4;height: 30;joinStyle: 1;layer.smooth: true;layer.enabled: true;antialiasing: true;strokeColor: "transparent"
@@ -215,20 +146,15 @@ Rectangle {
                                 Label{anchors.centerIn: parent ; text: "1" ; font.pointSize: 7}
                             }
                         }
-
-
                         Behavior on opacity {NumberAnimation{ easing.type: Easing.OutInQuad;duration:500 ; }}
                     }
-
                 }
-
-
                 Behavior on height {NumberAnimation{duration:500}}
             }
 
-            //1
+            //3
             Rectangle{
-                id:sizeRectangle2_Id
+                id:sliderRectangle_Id
                 property bool isExpanded: false
                 width: parent.width
                 height: isExpanded ? 160 : 30
@@ -237,40 +163,40 @@ Rectangle {
                 border.color: "gray"
 
                 Image{
-                    id:sizeRectImage2_Id
+                    id:sliderRectImage_Id
                     y:10 ; x:10
                     source: "qrc:/Icon/Icon/arrow.svg"
                     sourceSize: "10x10"
                     fillMode: Image.PreserveAspectFit
-                    rotation: sizeRectangle2_Id.isExpanded ? 90 : 0
+                    rotation: sliderRectangle_Id.isExpanded ? 90 : 0
                     MouseArea{
                         anchors.fill: parent
                         cursorShape: "PointingHandCursor"
                         onClicked: {
-                            sizeRectangle2_Id.isExpanded = !sizeRectangle2_Id.isExpanded
+                            sliderRectangle_Id.isExpanded = !sliderRectangle_Id.isExpanded
                         }
                     }
                     Behavior on rotation {NumberAnimation{duration:500}}
                 }
                 Text{
                     y:5
-                    anchors.left: sizeRectImage2_Id.right
+                    anchors.left: sliderRectImage_Id.right
                     anchors.leftMargin: 5
                     text: "Sliders"
                 }
 
                 Item{
                     anchors.horizontalCenter:parent.horizontalCenter
-                    anchors.top: sizeRectImage2_Id.bottom
+                    anchors.top: sliderRectImage_Id.bottom
                     anchors.topMargin: 10
-                    anchors.bottom: sizeRectangle2_Id.bottom
+                    anchors.bottom: sliderRectangle_Id.bottom
                     anchors.bottomMargin: 10
                     width: parent.width - 20
 
 
                     Column{
                         anchors.fill: parent
-                        opacity: sizeRectangle2_Id.isExpanded ? 1 : 0
+                        opacity: sliderRectangle_Id.isExpanded ? 1 : 0
 
                         //1
                         MyRectangleSlider{
@@ -291,9 +217,9 @@ Rectangle {
                 Behavior on height {NumberAnimation{duration:500}}
             }
 
-            //3
+            //4
             Rectangle{
-                id:sizeRectangle3_Id
+                id:checkBoxRectangle_Id
                 property bool isExpanded: false
                 width: parent.width
                 height: isExpanded ? 100 : 30
@@ -302,61 +228,61 @@ Rectangle {
                 border.color: "gray"
 
                 Image{
-                    id:sizeRectImage3_Id
+                    id:checkBoxRectImage_Id
                     y:10 ; x:10
                     source: "qrc:/Icon/Icon/arrow.svg"
                     sourceSize: "10x10"
                     fillMode: Image.PreserveAspectFit
-                    rotation: sizeRectangle3_Id.isExpanded ? 90 : 0
+                    rotation: checkBoxRectangle_Id.isExpanded ? 90 : 0
                     MouseArea{
                         anchors.fill: parent
                         cursorShape: "PointingHandCursor"
                         onClicked: {
-                            sizeRectangle3_Id.isExpanded = !sizeRectangle3_Id.isExpanded
+                            checkBoxRectangle_Id.isExpanded = !checkBoxRectangle_Id.isExpanded
                         }
                     }
                     Behavior on rotation {NumberAnimation{duration:500}}
                 }
                 Text{
                     y:5
-                    anchors.left: sizeRectImage3_Id.right
+                    anchors.left: checkBoxRectImage_Id.right
                     anchors.leftMargin: 5
                     text: "CheckBox"
                 }
 
                 Item{
                     anchors.horizontalCenter:parent.horizontalCenter
-                    anchors.top: sizeRectImage3_Id.bottom
+                    anchors.top: checkBoxRectImage_Id.bottom
                     anchors.topMargin: 10
-                    anchors.bottom: sizeRectangle3_Id.bottom
+                    anchors.bottom: checkBoxRectangle_Id.bottom
                     anchors.bottomMargin: 10
                     width: parent.width - 20
 
 
                     Column{
                         anchors.fill: parent
-                        opacity: sizeRectangle3_Id.isExpanded ? 1 : 0
-                            Row{
-                                width: parent.width
-                                height: 30
-                                MyCheckBox{
-                                    labelName:"Enviromental Adaptation"
-                                }
-                                MyCheckBox{
+                        opacity: checkBoxRectangle_Id.isExpanded ? 1 : 0
+                        Row{
+                            width: parent.width
+                            height: 30
+                            MyCheckBox{
+                                labelName:"Enviromental Adaptation"
+                            }
+                            MyCheckBox{
 
-                                    labelName:"Linear Interpolation"
-                                }
+                                labelName:"Linear Interpolation"
                             }
-                            Row{
-                                width: parent.width
-                                height: 30
-                                MyCheckBox{
-                                    labelName:"Apply Segmentation"
-                                }
-                                MyCheckBox{
-                                    labelName:"Replcement Mode"
-                                }
+                        }
+                        Row{
+                            width: parent.width
+                            height: 30
+                            MyCheckBox{
+                                labelName:"Apply Segmentation"
                             }
+                            MyCheckBox{
+                                labelName:"Replcement Mode"
+                            }
+                        }
 
 
 

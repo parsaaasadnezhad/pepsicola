@@ -11,6 +11,10 @@
         <file>AwesomeQml/ArcItem.qml</file>
         <file>CustomItem/MyCheckBox.qml</file>
         <file>CustomItem/MyRectangleSlider.qml</file>
+        <file>CustomItem/MyRectangleSize.qml</file>
+        <file>Advertisment/CenterCircle.qml</file>
+        <file>Advertisment/Ground.qml</file>
+        <file>Advertisment/ThreeDCarpet.qml</file>
     </qresource>
     <qresource prefix="/Icon">
         <file>Icon/hide.svg</file>

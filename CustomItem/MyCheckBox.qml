@@ -51,6 +51,7 @@ RectangleItem{
             id:switch_Id
             anchors.verticalCenter: parent.verticalCenter
 
+
         }
         //3
     }

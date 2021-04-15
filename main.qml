@@ -23,8 +23,7 @@ ApplicationWindow {
         height: 200
 
         onSendNameToAd: {
-            console.log(name)
-//            property_Id.fanseatAlias.fanSeat_Id.modeRectangleItemName = name
+            property_Id.changeLoader(name)
         }
     }
 
@@ -33,7 +32,6 @@ ApplicationWindow {
         anchors.top: topList_Id.bottom
         anchors.topMargin: 5
         anchors.bottom: parent.bottom
-
         width: parent.width
 
     }

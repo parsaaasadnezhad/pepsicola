@@ -20,6 +20,7 @@ Item {
             height: 25
             color: index % 2 == 0 ? "#343434" : "#232323"
             Text{
+                color: "#fff"
                 text: index
             }
 

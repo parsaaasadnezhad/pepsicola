@@ -3,7 +3,22 @@ import "../Advertisment"
 
 Item {
 
-    property alias fanseatAlias: propertyItemLoader_Id
+    property alias loaderAlias: propertyItemLoader_Id
+
+    function changeLoader(type){
+        if(type === "0"){
+            propertyItemLoader_Id.sourceComponent = fanSeatComponent_Id
+        }
+        else if(type === "1"){
+            propertyItemLoader_Id.sourceComponent = enviromentalBilboardComponent_Id
+        }
+        else if(type === "2"){
+            propertyItemLoader_Id.sourceComponent = centerCircleComponent_Id
+        }
+        else if(type === "3"){
+            propertyItemLoader_Id.sourceComponent = groundComponent_Id
+        }
+    }
 
     Item{
         id:mainItem_Id
@@ -14,10 +29,13 @@ Item {
 
         Component.onCompleted: {propertyItemLoader_Id.sourceComponent = enviromentalBilboardComponent_Id}
 
+
         Loader{
             id:propertyItemLoader_Id
             anchors.fill: parent
             focus: true
+            onLoaded: {
+            }
         }
     }
 
@@ -37,33 +55,38 @@ Item {
     }
 
     // + + + + + Declaring Advertisment Qml Files
+    //FanSeat Component
     Component{
         id:fanSeatComponent_Id
 
-//        function connectToFanSeat(name){
-//            console.log("hello")
-//            fanSeat_Id.modeRectangleItemName = name
-//        }
-
         FanSeat{
             id:fanSeat_Id
-
-            onChangeItem: {
-                propertyItemLoader_Id.sourceComponent = enviromentalBilboardComponent_Id
-            }
         }
     }
-
+//Enviromental Bilboard Component
     Component{
         id:enviromentalBilboardComponent_Id
 
         EnviromentalBilboard{
             id:enviromentalBilboard_Id
-
-            onChangeItem: {
-                propertyItemLoader_Id.sourceComponent = fanSeatComponent_Id
-            }
         }
     }
 
+    //Center Circle Component
+    Component{
+        id:centerCircleComponent_Id
+
+        CenterCircle{
+            id:centerCircle_Id
+        }
+    }
+
+    //Ground compenet
+    Component{
+        id:groundComponent_Id
+
+        Ground{
+            id:ground_Id
+        }
+    }
 }
