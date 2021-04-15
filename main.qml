@@ -33,7 +33,7 @@ ApplicationWindow {
         anchors.topMargin: 5
         anchors.bottom: parent.bottom
         width: parent.width
-
+        height: parent.height-topList_Id.height;
     }
 
 }
