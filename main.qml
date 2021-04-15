@@ -4,6 +4,7 @@ import QtQuick.Window 2.15
 import "Element"
 
 ApplicationWindow {
+    id:root
     width: 450
     height: 700
     visible: true
@@ -34,6 +35,11 @@ ApplicationWindow {
         anchors.bottom: parent.bottom
         width: parent.width
 
+        onLengthChanged:{
+            var value = topList_Id.height + length
+            if(value < topList_Id.listViewAlias.count * 25 && value > 4*25 && value < root.height*4/5)
+                topList_Id.height = topList_Id.height + length
+        }
     }
 
 }

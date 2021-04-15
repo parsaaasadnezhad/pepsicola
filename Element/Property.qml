@@ -2,8 +2,10 @@ import QtQuick 2.0
 import "../Advertisment"
 
 Item {
-
+    id:root
     property alias loaderAlias: propertyItemLoader_Id
+
+    signal lengthChanged(int length)
 
     function changeLoader(type){
         if(type === "0"){
@@ -42,8 +44,31 @@ Item {
     Rectangle{
         id:topBar_Id
         width: parent.width
-        height: 25
+        height: 10
         color: "#3d3d3d"
+
+        MouseArea{
+            anchors.fill: parent
+            cursorShape: Qt.SizeVerCursor
+            property int myPressY
+            property int length
+//            drag{
+//                target:parent
+//                axis:Drag.YAxis
+//                //                maximumY: topList_Id.
+//                //                minimumY: -topList_Id. 20
+//            }
+            onPositionChanged: {
+                if(pressed)
+                {
+                    length = mouseY - myPressY
+                    root.lengthChanged(length)
+                }
+            }
+            onPressed: {
+                myPressY = mouseY
+            }
+        }
     }
 
     Rectangle{
@@ -63,7 +88,7 @@ Item {
             id:fanSeat_Id
         }
     }
-//Enviromental Bilboard Component
+    //Enviromental Bilboard Component
     Component{
         id:enviromentalBilboardComponent_Id
 

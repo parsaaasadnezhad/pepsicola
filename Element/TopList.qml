@@ -6,17 +6,19 @@ Item {
 
     signal sendNameToAd(string name)
 
+    property alias listViewAlias: listView_Id
+
     ListView{
         id:listView_Id
         anchors.fill: parent
         highlight: Rectangle {
-            color: "#0d47a1"; radius: 5 ;z:1;opacity: 0.3
+            color: "#0d47a1"; radius: 5 ;z:2;opacity: 0.3
         }
         focus: true
-        model: 4
+        model: 30
 
         delegate: Rectangle{
-            width: parent.width
+            width: listView_Id.width
             height: 25
             color: index % 2 == 0 ? "#343434" : "#232323"
             Text{

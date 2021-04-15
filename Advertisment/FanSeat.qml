@@ -21,7 +21,7 @@ Rectangle {
         anchors.centerIn: parent
         width:   parent.width - 20
         height: parent.height - 20
-        contentHeight: height + height/4
+        contentHeight: modeRectItem_Id.height * 3 + (sizeRectangle_Id.height + sliderRectangle_Id.height + checkBoxRectangle_Id.height)
         clip: true
         z:2
 
