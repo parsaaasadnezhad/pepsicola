@@ -46,7 +46,6 @@ Item {
         width: parent.width
         height: 10
         color: "#3d3d3d"
-<<<<<<< HEAD
 
         MouseArea{
             anchors.fill: parent
@@ -69,22 +68,7 @@ Item {
             onPressed: {
                 myPressY = mouseY
             }
-=======
-        MouseArea{
-            property int oldMouseY
-            anchors.fill: parent;
-            cursorShape: Qt.SizeVerCursor;
 
-            onPressed: {
-                oldMouseY = mouseY
-            }
-
-            onPositionChanged: {
-                if (pressed) {
-                    topList_Id.height = topList_Id.height + (mouseY - oldMouseY)
-                }
-            }
->>>>>>> 53655f68a31ff69ffa2c62fdf866f8e8d8e85733
         }
     }
 

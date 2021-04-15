@@ -34,16 +34,13 @@ ApplicationWindow {
         anchors.topMargin: 5
         anchors.bottom: parent.bottom
         width: parent.width
-<<<<<<< HEAD
 
         onLengthChanged:{
             var value = topList_Id.height + length
             if(value < topList_Id.listViewAlias.count * 25 && value > 4*25 && value < root.height*4/5)
                 topList_Id.height = topList_Id.height + length
         }
-=======
         height: parent.height-topList_Id.height;
->>>>>>> 53655f68a31ff69ffa2c62fdf866f8e8d8e85733
     }
 
 }

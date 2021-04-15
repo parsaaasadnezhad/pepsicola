@@ -15,7 +15,7 @@ Item {
             color: "#0d47a1"; radius: 5 ;z:2;opacity: 0.3
         }
         focus: true
-        model: 30
+        model: 12
 
         delegate: Rectangle{
             width: listView_Id.width
