@@ -44,6 +44,21 @@ Item {
         width: parent.width
         height: 25
         color: "#3d3d3d"
+        MouseArea{
+            property int oldMouseY
+            anchors.fill: parent;
+            cursorShape: Qt.SizeVerCursor;
+
+            onPressed: {
+                oldMouseY = mouseY
+            }
+
+            onPositionChanged: {
+                if (pressed) {
+                    topList_Id.height = topList_Id.height + (mouseY - oldMouseY)
+                }
+            }
+        }
     }
 
     Rectangle{
@@ -63,7 +78,7 @@ Item {
             id:fanSeat_Id
         }
     }
-//Enviromental Bilboard Component
+    //Enviromental Bilboard Component
     Component{
         id:enviromentalBilboardComponent_Id
 
