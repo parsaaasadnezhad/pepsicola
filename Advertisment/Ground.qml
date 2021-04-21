@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtGraphicalEffects 1.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-import AdvertismentCpp 1.0
+//import AdvertismentCpp 1.0
 import "../AwesomeQml"
 import "../CustomItem"
 
@@ -14,9 +14,9 @@ Rectangle {
     color: "#454545"
 
 
-    FanSeatCpp{
+//    FanSeatCpp{
 
-    }
+//    }
 
     Flickable{
         anchors.centerIn: parent
@@ -32,7 +32,7 @@ Rectangle {
             spacing: 5
             //0
             Row{
-                Label{text: "Enviromental bilboard"}
+                Label{text: "Ground"}
             }
             //1
             MyRectangleSize{

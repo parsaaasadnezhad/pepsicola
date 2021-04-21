@@ -15,6 +15,10 @@
         <file>Advertisment/CenterCircle.qml</file>
         <file>Advertisment/Ground.qml</file>
         <file>Advertisment/ThreeDCarpet.qml</file>
+        <file>CustomItem/CustomSpinBox.qml</file>
+        <file>AwesomeQml/MySpinBox.qml</file>
+        <file>CustomItem/TwoSidePersent.qml</file>
+        <file>CustomItem/ThreeDoubleSpinBox.qml</file>
     </qresource>
     <qresource prefix="/Icon">
         <file>Icon/hide.svg</file>

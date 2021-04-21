@@ -8,16 +8,18 @@ Item {
     signal lengthChanged(int length)
 
     function changeLoader(type){
-        if(type === "0"){
+        var a = parseInt(type)
+//        var a = type*1
+        if(a%4 === 0){
             propertyItemLoader_Id.sourceComponent = fanSeatComponent_Id
         }
-        else if(type === "1"){
+        else if(a%4 === 1){
             propertyItemLoader_Id.sourceComponent = enviromentalBilboardComponent_Id
         }
-        else if(type === "2"){
+        else if(a%4 === 2){
             propertyItemLoader_Id.sourceComponent = centerCircleComponent_Id
         }
-        else if(type === "3"){
+        else if(a%4 === 3){
             propertyItemLoader_Id.sourceComponent = groundComponent_Id
         }
     }
@@ -29,7 +31,7 @@ Item {
         width: parent.width - leftBar_Id.width
         height: parent.height - topBar_Id.height
 
-        Component.onCompleted: {propertyItemLoader_Id.sourceComponent = enviromentalBilboardComponent_Id}
+        Component.onCompleted: {changeLoader("0")}
 
 
         Loader{
@@ -52,12 +54,7 @@ Item {
             cursorShape: Qt.SizeVerCursor
             property int myPressY
             property int length
-//            drag{
-//                target:parent
-//                axis:Drag.YAxis
-//                //                maximumY: topList_Id.
-//                //                minimumY: -topList_Id. 20
-//            }
+
             onPositionChanged: {
                 if(pressed)
                 {

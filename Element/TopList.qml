@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
 
+import AdvertismentModel 1.0
+
 Item {
     clip: true
 
@@ -8,14 +10,19 @@ Item {
 
     property alias listViewAlias: listView_Id
 
+
+
     ListView{
         id:listView_Id
         anchors.fill: parent
         highlight: Rectangle {
             color: "#0d47a1"; radius: 5 ;z:2;opacity: 0.3
         }
+
         focus: true
-        model: 12
+        model: AdModel{
+            list: adData
+        }
 
         delegate: Rectangle{
             width: listView_Id.width
@@ -23,7 +30,7 @@ Item {
             color: index % 2 == 0 ? "#343434" : "#232323"
             Text{
                 color: "#fff"
-                text: index
+                text: model.name
             }
 
             Image{
@@ -41,7 +48,7 @@ Item {
                     cursorShape: "PointingHandCursor"
                     onClicked: {
                         rightImage_Id.hidden = !rightImage_Id.hidden
-                        listView_Id.currentIndex = index 
+                        listView_Id.currentIndex = index
                     }
                 }
 
@@ -52,7 +59,7 @@ Item {
                 height: parent.height
                 onClicked: {
                     listView_Id.currentIndex = index
-                    sendNameToAd(modelData)
+                    sendNameToAd(model.name)
                 }
             }
         }

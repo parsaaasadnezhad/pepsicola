@@ -24,6 +24,7 @@ RectangleItem{
     Row{
         anchors.fill: parent
         spacing: 10
+        //1
         RectangleItem
         {
             id:titleRectAngleItem_Id
@@ -48,16 +49,41 @@ RectangleItem{
             }
         }
         //2
-        Slider{
-            id:slider_Id
+        RangeSlider{
+            id:twoSlider_Id
             anchors.verticalCenter: parent.verticalCenter
-            width: (parent.width - titleRectAngleItem_Id.width - resultRectAngleItem_Id.width)*8/9
+            width: (parent.width - titleRectAngleItem_Id.width - 2*firstResultRectAngleItem_Id.width)*8/9
         }
-        //3
+
     }
     RectangleItem
     {
-        id:resultRectAngleItem_Id
+        id:firstResultRectAngleItem_Id
+        anchors.right: secondResultRectAngleItem_Id.left
+        anchors.rightMargin: -2
+        radius: 0
+        width: 35
+        height: 30
+        joinStyle: 1
+        layer.smooth: true
+        layer.enabled: true
+        antialiasing: true
+        strokeColor: "transparent"
+        fillColor: "#353535"
+        topLeftRadius: 5
+        bottomRightRadius: 5
+        topLeftBevel: true
+        bottomRightBevel: true
+
+        Label{
+            anchors.centerIn: parent
+            text: Math.round(twoSlider_Id.first.value*100) + " %"
+            font.pointSize: 7
+        }
+    }
+    RectangleItem
+    {
+        id:secondResultRectAngleItem_Id
         anchors.right: parent.right
         radius: 0
         width: 35
@@ -75,7 +101,7 @@ RectangleItem{
 
         Label{
             anchors.centerIn: parent
-            text: Math.round(slider_Id.value*100) + " %"
+            text: Math.round(twoSlider_Id.second.value*100) + " %"
             font.pointSize: 7
         }
     }

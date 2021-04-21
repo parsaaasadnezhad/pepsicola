@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtGraphicalEffects 1.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-import AdvertismentCpp 1.0
+//import AdvertismentCpp 1.0
 import "../AwesomeQml"
 import "../CustomItem"
 
@@ -13,9 +13,9 @@ Rectangle {
     anchors.fill: parent
     color: "#454545"
 
-    FanSeatCpp{
+//    FanSeatCpp{
 
-    }
+//    }
 
     Flickable{
         anchors.centerIn: parent
@@ -37,7 +37,7 @@ Rectangle {
             MyRectangleSize{
                 id:modeRectItem_Id
                 titleText: "Mode"
-                valueText: "parsa"
+                valueText: "sample2"
                 titleFontSize: 8
                 opacity: 1
             }
